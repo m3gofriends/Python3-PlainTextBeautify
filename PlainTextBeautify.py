@@ -27,6 +27,4 @@ ans = input("\n-----Change? Y/N -----\n")
 if ans.upper() == "Y" or ans.upper() == "YES":
     f.seek(0)
     f.writelines(beautify_list)
-    f.close()
-if ans.upper() == "N" or ans.upper() == "NO":
-    f.close()
+f.close()
