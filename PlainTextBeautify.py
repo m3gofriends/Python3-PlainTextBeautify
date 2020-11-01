@@ -23,7 +23,7 @@ for line in f:
     beautify_list.append(line)
 
 print("\n -----End -----") 
-ans = input("\n-----Chnage? Y/N -----\n") 
+ans = input("\n-----Change? Y/N -----\n") 
 if ans.upper() == "Y" or ans.upper() == "YES":
     f.seek(0)
     f.writelines(beautify_list)
