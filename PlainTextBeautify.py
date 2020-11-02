@@ -2,7 +2,8 @@ import sys
 
 programming_language_dic = {
     0 : "+-*/%=!><&|", #Support Python
-    1 : "+-*/%=!><&|?^" #Support C, C++, C#, Java, JavaScript
+    1 : "+-*/%=!><&|?^", #Support C, C++, C#, Java, JavaScript
+    2 : None
     }
 
 try:
@@ -10,8 +11,8 @@ try:
 except:
     print("Program terminated with wrong input.")
     sys.exit(0)
-    
-if beautify_char == 2:
+
+if beautify_char == None:
     beautify_char = input()
 if beautify_char == -1:
     sys.exit(0)
