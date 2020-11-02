@@ -1,6 +1,17 @@
-beautify_char = "+-*/%=!><&|"
-beautify_list = []
+import sys
 
+programming_language_dic = {
+    0 : "+-*/%=!><&|", #Support Python
+    1 : "+-*/%=!><&|?^" #Support C, C++, C#, Java, JavaScript
+    }
+
+beautify_char = programming_language_dic.get(int(input("Input your Programming language number:\n0 : Support Python\n1 : Support C, C++, C#, Java, JavaScript\n2 : Input string by yourself\n")), -1)
+if beautify_char == 2:
+    beautify_char = input()
+if beautify_char == -1:
+    sys.exit(0)
+
+beautify_list = []
 textfile_path = input("Input your Text file path:\n")
 print(" -----Begin -----") 
 f = open(textfile_path, 'r+', encoding = 'utf8')
@@ -23,8 +34,9 @@ for line in f:
     beautify_list.append(line)
 
 print("\n -----End -----") 
-ans = input("\n-----Change? Y/N -----\n") 
+ans = input("\n-----Change? Y/N-----\n") 
 if ans.upper() == "Y" or ans.upper() == "YES":
     f.seek(0)
     f.writelines(beautify_list)
 f.close()
+
