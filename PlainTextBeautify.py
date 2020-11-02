@@ -5,7 +5,12 @@ programming_language_dic = {
     1 : "+-*/%=!><&|?^" #Support C, C++, C#, Java, JavaScript
     }
 
-beautify_char = programming_language_dic.get(int(input("Input your Programming language number:\n0 : Support Python\n1 : Support C, C++, C#, Java, JavaScript\n2 : Input string by yourself\n")), -1)
+try:
+    beautify_char = programming_language_dic.get(int(input("Input your Programming language number:\n0 : Support Python\n1 : Support C, C++, C#, Java, JavaScript\n2 : Input string by yourself\n")), -1)
+except:
+    print("Program terminated with wrong input.")
+    sys.exit(0)
+    
 if beautify_char == 2:
     beautify_char = input()
 if beautify_char == -1:
