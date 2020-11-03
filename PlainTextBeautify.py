@@ -24,16 +24,13 @@ f = open(textfile_path, 'r+', encoding = 'utf8')
 
 for line in f:
     for position in range(len(beautify_char)):
-        next_position = 0
+        next_position = line.rfind(beautify_char[position])
         for times in range(line.count(beautify_char[position])):
-            if line[line.find(beautify_char[position],next_position + 1) + 1] != ' ' and line[line.find(beautify_char[position],next_position + 1) + 1] not in beautify_char:
-                line = line[:line.find(beautify_char[position],next_position + 1) + 1] + ' ' + line[line.find(beautify_char[position],next_position + 1) + 1:]
-            if line[line.find(beautify_char[position],next_position + 1) - 1] != ' ' and line[line.find(beautify_char[position],next_position + 1) - 1] not in beautify_char:
-                line = line[:line.find(beautify_char[position],next_position + 1)] + ' ' + line[line.find(beautify_char[position],next_position + 1):]
-            if line[line.find(beautify_char[position],next_position + 1) - 1] in beautify_char:
-                next_position = line.find(beautify_char[position],next_position + 1) + 1
-            else:
-                next_position = line.find(beautify_char[position],next_position + 1)
+            if line[line.rfind(beautify_char[position],0,next_position+1) + 1] != ' ' and line[line.rfind(beautify_char[position],0,next_position+1) + 1] not in beautify_char:
+                line = line[:line.rfind(beautify_char[position],0,next_position+1) + 1] + ' ' + line[line.rfind(beautify_char[position],0,next_position+1) + 1:]
+            if line[line.rfind(beautify_char[position],0,next_position + 1) - 1] != ' ' and line[line.rfind(beautify_char[position],0,next_position + 1) - 1] not in beautify_char:
+                line = line[:line.rfind(beautify_char[position],0,next_position + 1)] + ' ' + line[line.rfind(beautify_char[position],0,next_position + 1):]
+            next_position = line.rfind(beautify_char[position],0,next_position)
     print(line, end = "")
     beautify_list.append(line)
 
@@ -43,4 +40,3 @@ if ans.upper() == "Y" or ans.upper() == "YES":
     f.seek(0)
     f.writelines(beautify_list)
 f.close()
-
