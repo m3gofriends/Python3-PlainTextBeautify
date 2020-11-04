@@ -1,6 +1,6 @@
 import sys
 
-programming_language_dic = { #["all_beautify_char", "left_beautify_char", "righr_beautify_char", "next_line_char"]
+programming_language_dic = { #["all_beautify_char", "left_beautify_char", "right_beautify_char", "next_line_char"]
     0 : ["+-*/%=!><&|^~,", "~", ",", None], #Support Python
     1 : ["+-*/%=!><&|?^~,#", "~", ",", "#"], #Support C, C++, C#, Java, JavaScript
     2 : []
@@ -13,7 +13,7 @@ except:
     sys.exit(0)
 
 if beautify_char == []:
-    print("Input four string follow a sequence:\nall_beautify_char\nleft_beautify_char\nrighr_beautify_char\nnext_line_char")
+    print("Input four string follow a sequence:\nall_beautify_char\nleft_beautify_char\nright_beautify_char\nnext_line_char")
     for i in range(4):
         beautify_char.append(input())
 if beautify_char == -1:
@@ -26,6 +26,7 @@ f = open(textfile_path, 'r+', encoding = 'utf8')
 
 for line in f:
     if beautify_char[3] != None and beautify_char[3] in line:
+        print(line, end = "")
         continue
     for position in range(len(beautify_char[0])):
         next_position = line.rfind(beautify_char[0][position])
