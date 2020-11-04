@@ -14,10 +14,10 @@ Now support Python, C, C++, C#, Java and JavaScript!
 
 ## Example 2
 
-![Image](https://i.imgur.com/mEmvG3Z.png)
+![Image](https://i.imgur.com/st4dbWE.png)
 
-![Image](https://i.imgur.com/MzqvSdF.png)
-![Image](https://i.imgur.com/gwsq0bn.png)
+![Image](https://i.imgur.com/uZ5jkpt.png)
+![Image](https://i.imgur.com/rwrfa9k.png)
 
 **&ensp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;Befor&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;&emsp;After**
 # Future Enhancement
