@@ -1,5 +1,5 @@
 # Python3-PlainTextBeautify
-PlainTextBeautify is a plain text beautification tool.
+PlainTextBeautify can let your code in good order.
 
 Now support Python, C, C++, C#, Java and JavaScript!
 
