@@ -27,6 +27,7 @@ f = open(textfile_path, 'r+', encoding = 'utf8')
 for line in f:
     if beautify_char[2] != None and beautify_char[2] in line:
         print(line, end = "")
+        beautify_list.append(line)
         continue
     for position in range(len(beautify_char[0])):
         next_position = line.rfind(beautify_char[0][position])
