@@ -2,7 +2,7 @@ import sys
 
 programming_language_dic = { #["all_beautify_char", "left_beautify_char", "righr_beautify_char", "next_line_char"]
     0 : ["+-*/%=!><&|^~,", "~", ",", None], #Support Python
-    1 : ["+-*/%=!><&|?^~,", "~", ",", "#"], #Support C, C++, C#, Java, JavaScript
+    1 : ["+-*/%=!><&|?^~,#", "~", ",", "#"], #Support C, C++, C#, Java, JavaScript
     2 : []
     }
 
