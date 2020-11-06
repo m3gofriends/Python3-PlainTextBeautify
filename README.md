@@ -1,7 +1,7 @@
 # Python3-PlainTextBeautify
 PlainTextBeautify can let your code in good order.
 
-Now support Python, C, C++, C#, Java and JavaScript!
+Now support Python, C, C++ and C#.
 
 ## Example 
 
