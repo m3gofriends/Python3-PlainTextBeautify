@@ -2,31 +2,28 @@ import sys
 import re
 
 programming_language_dic = { #["all_beautify_char", "right_beautify_char", "pointer", "pointer_list"]
-    0 : ["+-*/%=!><&|^,", ",", False, []], #Support Python
+    0 : ["+-*/%=!><&|^,", ",", False], #Support Python
     1 : ["+-*/%=!><&|?^,", ",", True, []], #Support C, C++, C#
     2 : []
     }
-
 c_type_keyword = ["void", "char", "short", "int", "long", "float", "double", "signed", "unsigned", "struct", "union", "enum", "typedef"]
+beautify_list = []
 
 try:
     beautify_char = programming_language_dic.get(int(input("Input your programming language number:\n0 : Support Python\n1 : Support C, C++, C#\n2 : Input string by yourself\n")), -1)
+    if beautify_char == []:
+        print("Input three string follow a sequence:\nall_beautify_char (String)\nright_beautify_char (String)\npointer (True or False)")
+        for i in range(3):
+            beautify_char.append(input())
+    if beautify_char == -1:
+        sys.exit(0)
+    textfile_path = input("Input your Text file path: (Example: D:\\Users\\user\\Desktop\\test.txt)\n")
+    f = open(textfile_path, 'r+', encoding = 'utf8')
 except:
     print("Program terminated with wrong input.")
-    sys.exit(0)
-
-if beautify_char == []:
-    print("Input three string follow a sequence:\nall_beautify_char (String)\nright_beautify_char (String)\npointer (True or False)")
-    for i in range(3):
-        beautify_char.append(input())
-if beautify_char == -1:
-    sys.exit(0)
-
-beautify_list = []
-textfile_path = input("Input your Text file path:\n")
+    sys.exit(1)
+    
 print("-----Begin -----") 
-f = open(textfile_path, 'r+', encoding = 'utf8')
-
 for line in f:
     for position in range(len(beautify_char[0])):
         next_position = line.rfind(beautify_char[0][position])
