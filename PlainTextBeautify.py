@@ -1,3 +1,7 @@
+"""                                      
+      First publication date : 2020 / 11 / 1
+      Author : 張哲銘(CHANG, CHE-MING)
+"""
 import sys
 import re
 
@@ -38,8 +42,10 @@ for line in f:
                 continue
             elif beautify_char[0][position] == "*" and beautify_char[2] == True and any(pointer in line for pointer in beautify_char[3]):
                 for pointer_position in range(len(beautify_char[3])):
-                    if beautify_char[3][pointer_position] in line and line.index(beautify_char[3][pointer_position]) <= line.rfind(beautify_char[0][position], 0, next_position + 1) and line.index(beautify_char[3][pointer_position]) + len(beautify_char[3][pointer_position]) > line.rfind(beautify_char[0][position], 0, next_position + 1): 
-                        continue         
+                    if beautify_char[3][pointer_position] in line and line.index(beautify_char[3][pointer_position]) <= line.rfind(beautify_char[0][position], 0, next_position + 1) and line.index(beautify_char[3][pointer_position]) + len(beautify_char[3][pointer_position]) - 1 >= line.rfind(beautify_char[0][position], 0, next_position + 1):
+                        print("|")
+                        continue
+                    
             elif beautify_char[0][position] == "=" and line[line.rfind(beautify_char[0][position], 0, next_position + 1) + 1] not in " =":
                 line = line[:line.rfind(beautify_char[0][position], 0, next_position + 1) + 1] + ' ' + line[line.rfind(beautify_char[0][position], 0, next_position + 1) + 1:]
             elif line[line.rfind(beautify_char[0][position], 0, next_position + 1) + 1] not in " '\"=" and line[line.rfind(beautify_char[0][position], 0, next_position+1) + 1] != beautify_char[0][position]:
