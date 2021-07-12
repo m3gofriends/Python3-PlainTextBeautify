@@ -27,7 +27,8 @@ except:
     print("Program terminated with wrong input.")
     sys.exit(1)
     
-print("-----Begin -----") 
+print("----- Begin -----")
+
 for line in f:
     for position in range(len(beautify_char[0])):
         next_position = line.rfind(beautify_char[0][position])
@@ -56,8 +57,9 @@ for line in f:
     print(line, end = "")
     beautify_list.append(line)
 
-print("\n-----End -----")
-ans = input("\n-----Change? Y/N-----\n") 
+print("----- End -----")
+
+ans = input("\n----- Want to change file? Y/N -----\n") 
 if ans.upper() == "Y" or ans.upper() == "YES":
     f.seek(0)
     f.writelines(beautify_list)
