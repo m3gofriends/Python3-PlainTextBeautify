@@ -1,14 +1,20 @@
+# cython: language_level=3
+
 import re
 
 def plaintext_processing(Beautify_char, C_type_keyword, file, file_path, file_name):
      
     cdef list beautify_char = Beautify_char
     cdef list c_type_keyword = C_type_keyword
+    cdef list file_list = file.readlines()
     cdef list beautify_list = []
+    cdef int times
+    cdef int position
     cdef int next_position
+    cdef int pointer_position
     cdef str line
 
-    for line in file:
+    for line in file_list:
         for position in range(len(beautify_char[0])):
             next_position = line.rfind(beautify_char[0][position])
             for times in range(line.count(beautify_char[0][position])):
