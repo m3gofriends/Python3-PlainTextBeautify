@@ -82,8 +82,10 @@ if ans.upper() == "Y" or ans.upper() == "YES":
     remove(file_path)
     file_copy.close()
     rename(file_copy_path, file_path)
+    print("File was changed!")
     
 else:
     file_copy.close()
     remove(file_copy_path)
     file.close()
+    print("Nothing change.")
