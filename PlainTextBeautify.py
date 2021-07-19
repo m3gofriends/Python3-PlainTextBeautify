@@ -9,9 +9,10 @@ from os import rename, remove
 from sys import exit as sys_exit
 import re
 
-programming_language_dic = { #["all_beautify_char", "right_beautify_char", "pointer", "pointer_list"]
-    0 : ["+-*/%=!><&|^,", ",", False], #Support Python
-    1 : ["+-*/%=!><&|?^,", ",", True, []], #Support C, C++, C#
+programming_language_dic = {
+    # : ["all_beautify_char", "right_beautify_char", "pointer", "pointer_list"]
+    0 : ["+-*/%=!><&|^,", ",", False], # Support Python
+    1 : ["+-*/%=!><&|?^,", ",", True, []], # Support C, C++, C#
     2 : []
     }
 
@@ -82,10 +83,8 @@ if ans.upper() == "Y" or ans.upper() == "YES":
     remove(file_path)
     file_copy.close()
     rename(file_copy_path, file_path)
-    print("File was changed!")
     
 else:
     file_copy.close()
     remove(file_copy_path)
     file.close()
-    print("Nothing change.")
