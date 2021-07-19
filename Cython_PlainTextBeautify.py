@@ -9,9 +9,10 @@ from os import rename, remove
 from sys import exit as sys_exit
 from Cython_module import Cython_PlaintextProcessing
 
-programming_language_dic = { #["all_beautify_char", "right_beautify_char", "pointer", "pointer_list"]
-    0 : ["+-*/%=!><&|^,", ",", False], #Support Python
-    1 : ["+-*/%=!><&|?^,", ",", True, []], #Support C, C++, C#
+programming_language_dic = {
+    # : ["all_beautify_char", "right_beautify_char", "pointer", "pointer_list"]
+    0 : ["+-*/%=!><&|^,", ",", False], # Support Python
+    1 : ["+-*/%=!><&|?^,", ",", True, []], # Support C, C++, C#
     2 : []
     }
 
