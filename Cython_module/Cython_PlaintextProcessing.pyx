@@ -1,6 +1,6 @@
 # cython: language_level=3
 
-import re
+from re import split as re_split
 
 def plaintext_processing(list beautify_char, list c_type_keyword, file, str file_path, str file_name):
      
@@ -17,9 +17,9 @@ def plaintext_processing(list beautify_char, list c_type_keyword, file, str file
             next_position = line.rfind(beautify_char[0][position])
             for times in range(line.count(beautify_char[0][position])):
                 if beautify_char[0][position] == "*" and beautify_char[2] == True and any(keyword in line.split()[0] for keyword in c_type_keyword):
-                    for position in range(len(list(filter(None, re.split(" |, |,|;", line)))) - 1):
-                        if "*" in (list(filter(None, re.split(" |, |,|;", line))))[position + 1]:
-                            beautify_char[3].append((list(filter(None, re.split(" |, |,|;", line))))[position + 1])
+                    for position in range(len(list(filter(None, re_split(" |, |,|;", line)))) - 1):
+                        if "*" in (list(filter(None, re_split(" |, |,|;", line))))[position + 1]:
+                            beautify_char[3].append((list(filter(None, re_split(" |, |,|;", line))))[position + 1])
                     break
                 
                 elif beautify_char[0][position] == "*" and beautify_char[2] == True and any(pointer in line for pointer in beautify_char[3]):
