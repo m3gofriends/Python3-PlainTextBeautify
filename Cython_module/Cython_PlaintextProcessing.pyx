@@ -2,10 +2,8 @@
 
 import re
 
-def plaintext_processing(Beautify_char, C_type_keyword, file, file_path, file_name):
+def plaintext_processing(list beautify_char, list c_type_keyword, file, str file_path, str file_name):
      
-    cdef list beautify_char = Beautify_char
-    cdef list c_type_keyword = C_type_keyword
     cdef list file_list = file.readlines()
     cdef list beautify_list = []
     cdef int times
@@ -42,7 +40,7 @@ def plaintext_processing(Beautify_char, C_type_keyword, file, file_path, file_na
                 
         beautify_list.append(line)
 
-    file_copy_path = file_path[:-len(file_name)] + file_name.split(".")[0] + "_copy." + file_name.split(".")[-1]
+    cdef str file_copy_path = file_path[:-len(file_name)] + file_name.split(".")[0] + "_copy." + file_name.split(".")[-1]
     file_copy = open(file_copy_path, 'w+', encoding = 'utf8')
     file_copy.writelines(beautify_list)
     file_copy.seek(0)
