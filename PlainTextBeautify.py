@@ -40,7 +40,7 @@ except:
     
 print("----- Begin -----")
 
-for line in file:
+for line in file.readlines():
     for position in range(len(beautify_char[0])):
         next_position = line.rfind(beautify_char[0][position])
         for times in range(line.count(beautify_char[0][position])):
