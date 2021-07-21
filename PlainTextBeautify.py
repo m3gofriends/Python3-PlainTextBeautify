@@ -52,7 +52,7 @@ for line in file.readlines():
                         beautify_char[3].append((list(filter(None, re_split(" |, |,|;", line))))[position + 1])
                 break
             
-            # It will beautify your pointer variable(for C, C++, C#)
+            # It will beautify your pointer variables(for C, C++, C#)
             elif beautify_char[0][position] == "*" and beautify_char[2] == True and any(pointer in line for pointer in beautify_char[3]):
                 for pointer_position in range(len(beautify_char[3])):
                     if beautify_char[3][pointer_position] in line and line.index(beautify_char[3][pointer_position]) <= line.rfind(beautify_char[0][position], 0, next_position + 1) and line.index(beautify_char[3][pointer_position]) + len(beautify_char[3][pointer_position]) - 1 >= line.rfind(beautify_char[0][position], 0, next_position + 1):
